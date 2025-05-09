@@ -1,3 +1,7 @@
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
 // app/blog/page.tsx
 import { getAllPosts } from '@/lib/blog';
 import Link from 'next/link';

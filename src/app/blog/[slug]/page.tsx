@@ -1,15 +1,23 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { getPost, getPageContent } from '@/lib/blog';
 import { notFound } from 'next/navigation';
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+//type BlogPostParams = {params: { slug: string };};
+//export default async function BlogPost( {params}: BlockPostParams) { //will check what causes this error
+
+export default async function BlogPost( {params}: any) {
+
+
   const post = await getPost(params.slug);
+  
   if (!post) return notFound();
 
   const nameProp = post.properties.Name;
-const title =
-  nameProp.type === 'title' && nameProp.title.length > 0
-    ? nameProp.title[0].plain_text
-    : 'Untitled';
+  const title =
+    nameProp.type === 'title' && nameProp.title.length > 0
+      ? nameProp.title[0].plain_text
+      : 'Untitled';
 
   const blocks = await getPageContent(post.id);
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 export default function Testimonials() {
@@ -83,13 +84,11 @@ export default function Testimonials() {
       logo: 'https://tailwindcss.com/plus-assets/img/logos/laravel-logo-indigo-500.svg',
     },
   ];
-  
 
   return (
     <section id="testimonials" className="relative bg-white py-24 sm:py-32 px-6 lg:px-8">
       <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">What Our Users Say</h2>
 
-      {/* Left Arrow */}
       <button
         onClick={() => scroll('left')}
         disabled={!canScrollLeft}
@@ -100,7 +99,6 @@ export default function Testimonials() {
         <ChevronLeftIcon className="w-6 h-6" />
       </button>
 
-      {/* Right Arrow */}
       <button
         onClick={() => scroll('right')}
         disabled={!canScrollRight}
@@ -120,10 +118,24 @@ export default function Testimonials() {
             key={index}
             className="min-w-[300px] flex-shrink-0 bg-white p-6 rounded-2xl shadow-lg ring-1 ring-indigo-100 space-y-4"
           >
-            <img src={item.logo} alt="" className="h-8" />
+            <Image
+              src={item.logo}
+              alt={`${item.name} company logo`}
+              width={100}
+              height={32}
+              className="h-8 w-auto"
+              unoptimized
+            />
             <blockquote className="text-gray-800 italic">“{item.quote}”</blockquote>
             <figcaption className="flex items-center space-x-4">
-              <img src={item.image} alt="" className="h-12 w-12 rounded-full" />
+              <Image
+                src={item.image}
+                alt={item.name}
+                width={48}
+                height={48}
+                className="h-12 w-12 rounded-full object-cover"
+                unoptimized
+              />
               <div>
                 <div className="font-semibold">{item.name}</div>
                 <div className="text-sm text-gray-600">{item.role}</div>

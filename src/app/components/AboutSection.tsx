@@ -1,24 +1,68 @@
-export default function AboutSection() {
+import Image from 'next/image';  // Import Image component
+
+export default function AppSection() {
+  const apps = [
+    {
+      name: "HabitHive",
+      description: "Track daily habits, stay motivated, and reach your goals with our AI-powered habit tracker.",
+      link: "https://play.google.com/store/apps/details?id=com.usanko.habithive",
+      cover: "/coming-soon.jpg",  // Updated cover path
+    },
+    {
+      name: "AetherGlow",
+      description: "AI-powered screensaver with motivational quotes and minimal design.",
+      link: "#",
+      cover: "/coming-soon.jpg",  // Updated cover path
+    },
+    {
+      name: "CycleTrack",
+      description: "Easily track and manage menstrual cycles tailored for Kenyan women.",
+      link: "#",
+      cover: "/coming-soon.jpg",  // Updated cover path
+    },
+    {
+      name: "DevLogger",
+      description: "A lightweight logging tool for developers to track app performance and logs.",
+      link: "#",
+      cover: "/coming-soon.jpg",  // Updated cover path
+    },
+    // Add more apps here as needed
+  ];
+
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-5xl mx-auto px-4 text-center">
-        <h3 className="text-3xl font-bold mb-4">About Us</h3>
-        <p className="text-gray-700 text-lg leading-relaxed mb-8">
-          <strong>Ushanko Apps</strong> is driven by a passion for innovation and simplicity. We design and build intuitive, reliable, and AI-enhanced mobile apps that solve real-world problems. 
-          From habit tracking to personal wellness, our goal is to empower everyday users with smart tools that enhance productivity, organization, and well-being.
-        </p>
+    <section id="apps" className="py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4">
+        <h3 className="text-3xl font-bold text-center mb-10">Our Apps</h3>
 
-        <h4 className="text-2xl font-semibold mb-2">Our Mission</h4>
-        <p className="text-gray-600 mb-12">
-          To create accessible, impactful, and beautifully designed mobile applications that improve everyday life across Africa and beyond.
-        </p>
-
-        {/* Image gallery */}
-        <div className="relative h-[400px]">
-          <img src="/gallery/1.jpg" className="absolute top-0 left-1/4 w-40 h-40 object-cover rounded-lg shadow-lg rotate-2" alt="Gallery 1" />
-          <img src="/gallery/2.jpg" className="absolute top-10 left-1/2 w-48 h-48 object-cover rounded-lg shadow-lg -rotate-3" alt="Gallery 2" />
-          <img src="/gallery/3.jpg" className="absolute bottom-0 left-1/3 w-36 h-36 object-cover rounded-lg shadow-lg rotate-6" alt="Gallery 3" />
-          <img src="/gallery/4.jpg" className="absolute bottom-4 right-1/4 w-44 h-44 object-cover rounded-lg shadow-lg -rotate-2" alt="Gallery 4" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {apps.map((app, idx) => (
+            <div key={idx} className="bg-white shadow-md rounded-lg">
+              <Image
+                src={app.cover}
+                alt={app.name}
+                className="h-40 w-full object-cover rounded-t-lg"
+                width={300}
+                height={160}
+              />
+              <div className="p-4">
+                <h4 className="text-xl font-semibold mb-2">{app.name}</h4>
+                <p className="text-gray-600 mb-4">{app.description}</p>
+                <a
+                  href={app.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/google-play-badge.png"
+                    alt="Get it on Google Play"
+                    className="h-12"
+                    width={160}
+                    height={48}
+                  />
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

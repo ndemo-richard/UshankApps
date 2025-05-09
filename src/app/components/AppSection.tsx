@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AppSection() {
   const apps = [
     {
@@ -27,7 +29,6 @@ export default function AppSection() {
     // Add more apps here as needed
   ];
 
-
   return (
     <section id="apps" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
@@ -36,10 +37,12 @@ export default function AppSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {apps.map((app, idx) => (
             <div key={idx} className="bg-white shadow-md rounded-lg">
-              <img
+              <Image
                 src={app.cover}
                 alt={app.name}
                 className="h-40 w-full object-cover rounded-t-lg"
+                width={500}   // You can adjust the width and height to fit your design
+                height={200}  // You can adjust the width and height to fit your design
               />
               <div className="p-4">
                 <h4 className="text-xl font-semibold mb-2">{app.name}</h4>
@@ -49,10 +52,12 @@ export default function AppSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src="/google-play-badge.png"
                     alt="Get it on Google Play"
                     className="h-12"
+                    width={200}   // Adjust the width to fit your design
+                    height={60}   // Adjust the height to fit your design
                   />
                 </a>
               </div>
