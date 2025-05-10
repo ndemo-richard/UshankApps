@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
 const navigation = [
-  { name: 'Home', href: '/#hero' },
+  { name: 'Home', href: '/' },
   { name: 'Apps', href: '/#apps' },
   { name: 'About Us', href: '/#about' },
   { name: 'Blog', href: '/blog' },
@@ -25,8 +25,9 @@ export default function Header() {
               alt="Ushanko Logo"
               src="/ushanko-logo.png"
               className="h-12 w-auto"
-              width={48}   // Set the width of the logo
-              height={48}  // Set the height of the logo
+              width={98}   // Set the width of the logo
+              height={98}  // Set the height of the logo
+              layout="intrinsic"
             />
           </a>
         </div>

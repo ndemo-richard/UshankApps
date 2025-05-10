@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-export default function Hero() {
+export default function Home() {
   return (
     <section id="hero" className="relative isolate px-6 pt-14 lg:px-8">
       <div
