@@ -3,16 +3,16 @@ import Image from 'next/image';
 export default function AppSection() {
   const apps = [
     {
-      name: "HabitHive",
-      description: "Track daily habits, stay motivated, and reach your goals with our AI-powered habit tracker.",
-      link: "https://play.google.com/store/apps/details?id=com.usanko.habithive",
-      cover: "/coming-soon.jpg",  // Updated cover path
+      name: "KLTC",
+      description: "KLTC provides you entertainment anywhere you are provided you have a smartphone and internet connection ready.",
+      link: "https://play.google.com/store/apps/details?id=com.KLTC&pcampaignid=web_share",
+      cover: "/kltc.webp",
     },
     {
       name: "AetherGlow",
-      description: "AI-powered screensaver with motivational quotes and minimal design.",
-      link: "#",
-      cover: "/coming-soon.jpg",  // Updated cover path
+      description: "AetherGlow transforms your device into a minimalistic screensaver that displays inspirational, AI-curated quotes when your screen is idle. Designed for clarity and calm, AetherGlow helps you pause, reflect, and refocus during the day.",
+      link: "https://play.google.com/store/apps/details?id=com.ushanko.aetherglow&pcampaignid=web_share",
+      cover: "/aetherglow.webp",  
     },
     {
       name: "CycleTrack",
