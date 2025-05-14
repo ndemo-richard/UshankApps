@@ -14,18 +14,7 @@ export default function AppSection() {
       link: "https://play.google.com/store/apps/details?id=com.ushanko.aetherglow&pcampaignid=web_share",
       cover: "/aetherglow.webp",  
     },
-    {
-      name: "CycleTrack",
-      description: "Easily track and manage menstrual cycles tailored for Kenyan women.",
-      link: "#",
-      cover: "/coming-soon.jpg",  // Updated cover path
-    },
-    {
-      name: "DevLogger",
-      description: "A lightweight logging tool for developers to track app performance and logs.",
-      link: "#",
-      cover: "/coming-soon.jpg",  // Updated cover path
-    },
+   
     // Add more apps here as needed
   ];
 
